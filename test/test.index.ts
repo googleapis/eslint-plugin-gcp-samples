@@ -17,7 +17,7 @@ import {execSync} from 'child_process';
 import * as assert from 'assert';
 
 const cmd =
-  './node_modules/.bin/eslint --config test/fixtures/.eslintrc --no-eslintrc test/fixtures';
+  './node_modules/.bin/eslint --config test/fixtures/.eslintrc --no-ignore --no-eslintrc test/fixtures';
 
 describe('gcp samples', () => {
   it('should pass for a perfect snippet', () => {

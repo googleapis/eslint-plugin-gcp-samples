@@ -12,7 +12,7 @@
     "fix": "gts fix '**/*.ts'",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "try-rule": "eslint --config test/fixtures/.eslintrc --no-eslintrc",
+    "try-rule": "eslint --config test/fixtures/.eslintrc --no-ignore --no-eslintrc",
     "docs": "echo no docs"
   },
   "keywords": [],
