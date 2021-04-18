@@ -1,0 +1,11 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "gcp-samples/has-main": "error",
+    "gcp-samples/calls-main-last": "error",
+    "gcp-samples/handles-errors": "error"
+  },
+  "plugins": ["eslint-plugin-gcp-samples"]
+}
