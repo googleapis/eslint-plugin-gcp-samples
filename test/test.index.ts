@@ -50,7 +50,7 @@ describe('gcp samples', () => {
     assert.throws(
       () => execSync(`${cmd}/call-main-no-params.js`, {encoding: 'utf-8'}),
       err => {
-        return /Sample must call the/.test(err.stdout);
+        return /method must pass/.test(err.stdout);
       }
     );
   });

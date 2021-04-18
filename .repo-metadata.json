@@ -1,0 +1,9 @@
+{
+  "repo": "googleapis/eslint-plugin-gcp-samples",
+  "distribution_name": "eslint-plugin-gcp-samples",
+  "language": "nodejs",
+  "release_level": "alpha",
+  "client_documentation": "https://github.com/googleapis/eslint-plugin-gcp-samples",
+  "name_pretty": "eslint-plugin-gcp-samples",
+  "name": "eslint-plugin-gcp-samples"
+}

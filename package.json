@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A collection of eslint rules specifically designed for Google Cloud node.js samples.",
   "main": "build/src/index.js",
+  "repository": "googleapis/eslint-plugin-gcp-samples",
   "scripts": {
     "test": "c8 mocha build/test",
     "lint": "gts lint '**/*.ts'",
@@ -10,7 +11,9 @@
     "compile": "tsc",
     "fix": "gts fix '**/*.ts'",
     "prepare": "npm run compile",
-    "pretest": "npm run compile"
+    "pretest": "npm run compile",
+    "try-rule": "eslint --config test/fixtures/.eslintrc --no-eslintrc",
+    "docs": "echo no docs"
   },
   "keywords": [],
   "author": "Justin Beckwith <justin.beckwith@gmail.com>",
