@@ -14,6 +14,7 @@
     "pretest": "npm run compile",
     "try-rule": "eslint --config test/fixtures/.eslintrc --no-ignore --no-eslintrc",
     "docs": "echo no docs",
+    "docs-test": "echo no docs tests",
     "system-test": "echo no system tests",
     "samples-test": "echo no samples tests"
   },
