@@ -15,7 +15,7 @@ A collection of eslint rules specifically designed for Google Cloud node.js samp
 
 
 A comprehensive list of changes in each version may be found in
-[the CHANGELOG](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/main/CHANGELOG.md).
+[the CHANGELOG](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/master/CHANGELOG.md).
 
 * [eslint-plugin-gcp-samples Node.js Client API Reference][client-docs]
 
@@ -93,7 +93,7 @@ More Information: [Google Cloud Platform Launch Stages][launch_stages]
 
 ## Contributing
 
-Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/main/CONTRIBUTING.md).
+Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/master/CONTRIBUTING.md).
 
 Please note that this `README.md`, the `samples/README.md`,
 and a variety of configuration files in this repository (including `.nycrc` and `tsconfig.json`)
@@ -105,7 +105,7 @@ to its template in this
 
 Apache Version 2.0
 
-See [LICENSE](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/main/LICENSE)
+See [LICENSE](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/master/LICENSE)
 
 [client-docs]: https://github.com/googleapis/eslint-plugin-gcp-samples
 

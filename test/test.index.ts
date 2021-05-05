@@ -13,54 +13,116 @@
 // limitations under the License.
 
 import {describe, it} from 'mocha';
-import {execSync} from 'child_process';
-import * as assert from 'assert';
+import {RuleTester} from 'eslint';
+import {
+  callsMainLast,
+  mainPassesNoArgsMessageId,
+  noCallMainMessageId,
+} from '../src/callsMainLast';
+import {hasMain, noMainMessageId} from '../src/hasMain';
+import {handlesErrors, noErrorHandlingMessageId} from '../src/handlesErrors';
 
-const cmd =
-  './node_modules/.bin/eslint --config test/fixtures/.eslintrc --no-ignore --no-eslintrc test/fixtures';
+const ruleTester = new RuleTester({
+  parserOptions: {
+    ecmaVersion: 2018,
+  },
+});
 
 describe('gcp samples', () => {
-  it('should pass for a perfect snippet', () => {
-    execSync(`${cmd}/correct.js`);
-  });
-
   it('should error for missing main method', () => {
-    assert.throws(
-      () => execSync(`${cmd}/no-main.js`, {encoding: 'utf-8'}),
-      err => {
-        return /The sample must have exactly one top level/.test(err.stdout);
-      }
-    );
-  });
-
-  it('should ignore files with no snippets', () => {
-    execSync(`${cmd}/no-sample.js`);
+    ruleTester.run('gcp-samples/has-main', hasMain, {
+      valid: [
+        {
+          code: `async function main() {
+            // [START product_snippet]
+            // [END product_snippet]
+          }`,
+        },
+        {
+          code: "console.log('no region tags');",
+        },
+      ],
+      invalid: [
+        {
+          code: `
+            // [START product_snippet]
+            console.log('no main function!');
+            // [END product_snippet]`,
+          errors: [{messageId: noMainMessageId}],
+        },
+      ],
+    });
   });
 
   it('should check for calling `main` at the very end', () => {
-    assert.throws(
-      () => execSync(`${cmd}/dont-call-main.js`, {encoding: 'utf-8'}),
-      err => {
-        return /Sample must call the/.test(err.stdout);
-      }
-    );
-  });
-
-  it('should make sure command args are passed to main', () => {
-    assert.throws(
-      () => execSync(`${cmd}/call-main-no-params.js`, {encoding: 'utf-8'}),
-      err => {
-        return /method must pass/.test(err.stdout);
-      }
-    );
+    ruleTester.run('gcp-samples/calls-main-last', callsMainLast, {
+      valid: [
+        {
+          code: `async function main() {
+  // [START product_snippet]
+  // [END product_snippet]
+}
+main(...process.argv.slice(2));
+`,
+        },
+        {
+          code: "console.log('no region tags');",
+        },
+      ],
+      invalid: [
+        {
+          code: `
+            // [START product_snippet]
+            console.log('no main function!');
+            // [END product_snippet]`,
+          errors: [{messageId: noCallMainMessageId}],
+        },
+        {
+          code: `// [START product_snippet]
+// [END product_snippet]
+main();`,
+          errors: [{messageId: mainPassesNoArgsMessageId}],
+          output: `// [START product_snippet]
+// [END product_snippet]
+main(...process.argv.slice(2));`,
+        },
+      ],
+    });
   });
 
   it('should make sure error handling is in place', () => {
-    assert.throws(
-      () => execSync(`${cmd}/no-error-handling.js`, {encoding: 'utf-8'}),
-      err => {
-        return /capture unhandled/.test(err.stdout);
-      }
-    );
+    ruleTester.run('gcp-samples/handles-errors', handlesErrors, {
+      valid: [
+        {
+          code: `
+            process.on('unhandledRejection', err => {
+              console.error(err.message);
+              process.exitCode = 1;
+            });
+            main(...process.argv.slice(2));
+          `,
+        },
+        {
+          code: "console.log('no region tags');",
+        },
+      ],
+      invalid: [
+        {
+          code: `// [START product_snippet]
+// [END product_snippet]
+main(...process.argv.slice(2));
+`,
+          errors: [{messageId: noErrorHandlingMessageId}],
+          output: `// [START product_snippet]
+// [END product_snippet]
+process.on('unhandledRejection', err => {
+  console.error(err.message);
+  process.exitCode = 1;
+});
+main(...process.argv.slice(2));
+`,
+        },
+      ],
+    });
   });
 });
