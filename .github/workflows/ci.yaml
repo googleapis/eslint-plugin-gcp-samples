@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - $default-branch
+      - master
   pull_request:
 name: ci
 jobs:
@@ -12,7 +12,7 @@ jobs:
         node: [10, 12, 14, 15]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
       - run: node --version
@@ -24,30 +24,24 @@ jobs:
       - run: rm -rf node_modules
       - run: npm install
       - run: npm test
-      - name: coverage
-        uses: codecov/codecov-action@v1
-        with:
-          name: actions ${{ matrix.node }}
-          fail_ci_if_error: false
+        env:
+          MOCHA_THROW_DEPRECATION: false
   windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 14
       - run: npm install
       - run: npm test
-      - name: coverage
-        uses: codecov/codecov-action@v1
-        with:
-          name: actions windows
-          fail_ci_if_error: false
+        env:
+          MOCHA_THROW_DEPRECATION: false
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 14
       - run: npm install
@@ -56,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 14
       - run: npm install
