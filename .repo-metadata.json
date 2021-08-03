@@ -3,7 +3,7 @@
   "distribution_name": "eslint-plugin-gcp-samples",
   "language": "nodejs",
   "release_level": "alpha",
-  "client_documentation": "https://github.com/googleapis/eslint-plugin-gcp-samples",
+  "client_documentation": "https://cloud.google.com/nodejs/docs/reference/eslint-plugin-gcp-samples/latest",
   "name_pretty": "eslint-plugin-gcp-samples",
   "name": "eslint-plugin-gcp-samples"
 }
