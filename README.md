@@ -107,7 +107,7 @@ Apache Version 2.0
 
 See [LICENSE](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/master/LICENSE)
 
-[client-docs]: https://github.com/googleapis/eslint-plugin-gcp-samples
+[client-docs]: https://cloud.google.com/nodejs/docs/reference/eslint-plugin-gcp-samples/latest
 
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 [projects]: https://console.cloud.google.com/project
