@@ -6,7 +6,7 @@
 
 [![release level](https://img.shields.io/badge/release%20level-alpha-orange.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-gcp-samples.svg)](https://www.npmjs.org/package/eslint-plugin-gcp-samples)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/eslint-plugin-gcp-samples/master.svg?style=flat)](https://codecov.io/gh/googleapis/eslint-plugin-gcp-samples)
+[![codecov](https://img.shields.io/codecov/c/github/googleapis/eslint-plugin-gcp-samples/main.svg?style=flat)](https://codecov.io/gh/googleapis/eslint-plugin-gcp-samples)
 
 
 
@@ -15,7 +15,7 @@ A collection of eslint rules specifically designed for Google Cloud node.js samp
 
 
 A comprehensive list of changes in each version may be found in
-[the CHANGELOG](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/master/CHANGELOG.md).
+[the CHANGELOG](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/main/CHANGELOG.md).
 
 * [eslint-plugin-gcp-samples Node.js Client API Reference][client-docs]
 
@@ -93,7 +93,7 @@ More Information: [Google Cloud Platform Launch Stages][launch_stages]
 
 ## Contributing
 
-Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/master/CONTRIBUTING.md).
+Contributions welcome! See the [Contributing Guide](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/main/CONTRIBUTING.md).
 
 Please note that this `README.md`, the `samples/README.md`,
 and a variety of configuration files in this repository (including `.nycrc` and `tsconfig.json`)
@@ -105,7 +105,7 @@ to its templates in
 
 Apache Version 2.0
 
-See [LICENSE](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/master/LICENSE)
+See [LICENSE](https://github.com/googleapis/eslint-plugin-gcp-samples/blob/main/LICENSE)
 
 [client-docs]: https://cloud.google.com/nodejs/docs/reference/eslint-plugin-gcp-samples/latest
 
