@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-gcp-samples",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A collection of eslint rules specifically designed for Google Cloud node.js samples.",
   "main": "build/src/index.js",
   "repository": "googleapis/eslint-plugin-gcp-samples",
