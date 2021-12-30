@@ -6,7 +6,6 @@
 
 [![release level](https://img.shields.io/badge/release%20level-alpha-orange.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-gcp-samples.svg)](https://www.npmjs.org/package/eslint-plugin-gcp-samples)
-[![codecov](https://img.shields.io/codecov/c/github/googleapis/eslint-plugin-gcp-samples/main.svg?style=flat)](https://codecov.io/gh/googleapis/eslint-plugin-gcp-samples)
 
 
 
