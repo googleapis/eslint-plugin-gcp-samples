@@ -25,12 +25,12 @@
     "build/src"
   ],
   "devDependencies": {
-    "@types/eslint": "^7.2.10",
-    "@types/estree": "0.0.51",
+    "@types/eslint": "^8.0.0",
+    "@types/estree": "0.0.50",
     "@types/mocha": "^8.2.2",
     "@types/node": "^16.0.0",
     "c8": "^7.7.1",
-    "eslint": "^7.24.0",
+    "eslint": "^8.0.0",
     "gts": "^3.1.0",
     "mocha": "^8.3.2",
     "typescript": "~4.2.4"
